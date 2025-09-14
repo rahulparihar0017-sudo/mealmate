@@ -581,10 +581,11 @@ h3 {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
       const message = document.getElementById('message').value.trim();
       if (!name || !phone) return alert('Please enter your name and phone.');
 
-      const text = encodeURIComponent(`Hi Meal Mate, my name is ${name}. Phone: ${phone}. ${message ? 'Message: ' + message : ''}`);
+      const text = encodeURIComponent('Hi Meal Mate! My name is ${name}, phone: ${phone}, address: ${address}, message: ${message}');
       const waUrl = "https://wa.me/919602205471?text=${text}";
       window.open(waUrl, '_blank');
     }
@@ -611,5 +612,6 @@ h3 {
 
 
 </html>
+
 
 
