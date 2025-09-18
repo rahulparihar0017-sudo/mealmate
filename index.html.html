@@ -8,7 +8,8 @@
   <title>Meal Mate Services — Home</title> <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
     rel="stylesheet">
- <style>
+ 
+<style>
   :root{    
       --primary-green:#2ecc71;    
       --dark-green:#1A4D2E;    
@@ -347,7 +348,7 @@ h3 {
 }
  </style>
 </head>
-
+<link rel="stylesheet" href="style.css">
 <body data-theme="light">
   <header>
     <div class="container header-inner">
@@ -430,7 +431,7 @@ h3 {
       </div>
       <div class="right">
         <!-- Replace with real hero image -->
-        <img class="hero-photo" src="https://i.ibb.co/0V6cLk8K/nn-png.jpg" alt="remote img">
+        <img class="hero-photo" ><img src="https://i.ibb.co/0V6cLk8K/nn-png.jpg" alt="nn-png" border="0"></a>
       </div>
     </section> <!-- Pricing / Plans -->
     <section class="container pricing" id="pricing" aria-label="Plans">
@@ -456,6 +457,11 @@ h3 {
           <h5>Weekly Plan</h5>
           <div class="amount">₹623 / week</div>
           <p class="muted">7 meals — convenient short term plan.</p>
+        </div>
+        <div class="plan">
+          <h5>Weekly Plan</h5>
+          <div class="amount">₹1246 / week</div>
+          <p class="muted">14 meals — convenient short term plan.</p>
         </div>
       </div>
     </section> <!-- Gallery -->
@@ -489,13 +495,13 @@ h3 {
         <h3 style="margin-top:0;font-family:Poppins">Book / Contact</h3>
         <p class="muted">Call or WhatsApp us to order, or leave details and we'll get back to you.</p>
         <form id="contactForm" onsubmit="handleSubmit(event)" aria-label="Order form">
-          <label for="name">Name</label>
+          <label for="name">Name *</label>
           <input id="name" name="name" type="text" placeholder="Your full name" required>
 
-          <label for="phone">Phone</label>
+          <label for="phone">Phone *</label>
           <input id="phone" name="phone" type="tel" placeholder="10 digit phone number" pattern="[0-9]{10}" required>
 
-          <label for="address">address</label>
+          <label for="address">address *</label>
           <textarea id="message" name="message" rows="4" placeholder="enter your address"></textarea>
 
           <label for="message">Message</label>
@@ -583,8 +589,8 @@ h3 {
       const phone = document.getElementById('phone').value.trim();
       const address = document.getElementById('address').value.trim();
       const message = document.getElementById('message').value.trim();
-      if (!name || !phone) return alert('Please enter your name and phone.');
-
+      if (!name || !phone || !address){ return alert('Please enter your name , phone and address.');}
+      
       const text = encodeURIComponent('Hi Meal Mate! My name is ${name}, phone: ${phone}, address: ${address}, message: ${message}');
       const waUrl = "https://wa.me/919602205471?text=${text}";
       window.open(waUrl, '_blank');
@@ -610,8 +616,4 @@ h3 {
   </script>
 </body>
 
-
 </html>
-
-
-
